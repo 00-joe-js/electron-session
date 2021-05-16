@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Notification } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -19,6 +19,7 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+    const test = new Notification({title: "Hello there", body: "you are beautiful"});
     createWindow()
 
     app.on('activate', () => {
